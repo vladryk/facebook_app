@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+
+{% block head_title %}Home{% endblock %}
+
+{% block content %}
+
+
+        <p id="p1"><a class="btn btn-primary" role="button" href="{% url 'account_logout' %}">Sign Out</a></p>
+
+
+        <p id="p2">
+                {{ user.socialaccount_set.all.0.user.last_name }}
+                {{ user.socialaccount_set.all.0.user.first_name }}
+        </p>
+
+        <img alt="avatar" src="{{ user.socialaccount_set.all.0.get_avatar_url }}" />
+
+{% endblock %}
